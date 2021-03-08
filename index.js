@@ -17,5 +17,5 @@ app.use(
 app.use(express.static('public'))
 
 app.listen(PORT, function () {
-  console.log('Server is up and running on port 3000\n');
+  console.log('Server is up and running on port ' + PORT);
 });

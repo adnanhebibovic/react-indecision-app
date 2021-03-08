@@ -4,8 +4,7 @@ module.exports = {
     entry: './src/app.js',
     output: {
         path: path.resolve(__dirname, 'public/src'),
-        filename: 'bundle.js',
-        publicPath: '/'
+        filename: 'bundle.js'
       },
     mode: 'development',
     module: {
@@ -29,8 +28,11 @@ module.exports = {
           }]
         }]
     },
-    devtool: 'cheap-module-source-map',
+    devtool: 'source-map',
     devServer: {
-      contentBase: path.join(__dirname, 'public')
+      contentBase: path.resolve(__dirname, 'public'),
+      publicPath: '/src',
+      historyApiFallback: true,
+      hot: true
     }
 }
